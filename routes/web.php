@@ -18,3 +18,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//购物车
+Route::get('cart', 'CartController@index');
+//添加购物车
+Route::get('cart/add/{goods_id?}', 'CartController@add');
+//订单处理
+Route::get('order/create', 'Order\IndexController@create');
+Route::get('order/list', 'Order\IndexController@oList'); 
+//微信支付
+Route::get('pay/wx', 'weixin\PayController@create');
+
