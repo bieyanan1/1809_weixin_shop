@@ -187,6 +187,7 @@ class PayController extends Controller
     public function paySuccess()
     {
         $oid = $_GET['oid'];
+        
         echo 'OID: '.$oid . "支付成功";
     }
 

@@ -61,22 +61,22 @@ class IndexController extends Controller
         return view('order.list',$data);
     }
 
-    // //查询订单支付状态
-    // public function payStatus()
-    // {
-    //     $oid = intval($_GET['oid']);
-    //     $info = OrderModel::where(['oid'=>$oid])->first();
-    //     $response = [];
-    //     if($info){
-    //         if($info->pay_time>0){      //已支付
-    //             $response = [
-    //                 'status'    => 0,       // 0 已支付
-    //                 'msg'       => 'ok'
-    //             ];
-    //         }
-    //     }else{
-    //         die("订单不存在");
-    //     }
-    //     die(json_encode($response));
-    // }
+    //查询订单支付状态
+    public function payStatus()
+    {
+        $oid = intval($_GET['oid']);
+        $info = OrderModel::where(['oid'=>$oid])->first();
+        $response = [];
+        if($info){
+            if($info->pay_time>0){
+                $response = [
+                    'status'    => 0,
+                    'msg'       => 'ok'
+                ];
+            }
+        }else{
+            die("订单不存在");
+        }
+        die(json_encode($response));
+    }
 }
