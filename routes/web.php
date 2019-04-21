@@ -27,5 +27,5 @@ Route::get('cart/add/{goods_id?}', 'CartController@add');
 Route::get('order/create', 'Order\IndexController@create');
 Route::get('order/list', 'Order\IndexController@oList'); 
 //微信支付
-Route::get('pay/wx', 'weixin\PayController@create');
+Route::get('pay/weixin', 'weixin\PayController@pay');
 
