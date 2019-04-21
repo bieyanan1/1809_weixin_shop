@@ -28,6 +28,8 @@ Route::get('order/create', 'Order\IndexController@create');
 Route::get('order/list', 'Order\IndexController@oList'); 
 //微信支付
 Route::get('pay/weixin', 'weixin\PayController@pay');
+//微信支付回调通知
+Route::post('weixin/pay/notify', 'weixin\PayController@notify');
 //查询订单支付状态
 Route::get('order/paystatus', 'Order\IndexController@payStatus');
 //支付成功

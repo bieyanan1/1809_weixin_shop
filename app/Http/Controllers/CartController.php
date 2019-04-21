@@ -24,7 +24,6 @@ class CartController extends Controller
                 $total_price += $g['price'];
                 $goods_list[] = $g;
             }
-            // echo '<pre>';print_r($goods_list);echo '</pre>';die;
             //展示购物车商品
             $data = [
                 'goods_list' => $goods_list,

@@ -173,6 +173,8 @@ class PayController extends Controller
             $sign = true;
             if($sign){       //签名验证成功
                 //TODO 逻辑处理  订单状态更新
+                $order_sn = $xml->out_trade_no;      //本地订单号
+                
             }else{
                 //TODO 验签失败
                 echo '验签失败，IP: '.$_SERVER['REMOTE_ADDR'];
@@ -187,7 +189,7 @@ class PayController extends Controller
     public function paySuccess()
     {
         $oid = $_GET['oid'];
-        
+
         echo 'OID: '.$oid . "支付成功";
     }
 
