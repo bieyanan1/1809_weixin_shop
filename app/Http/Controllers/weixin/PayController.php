@@ -175,7 +175,7 @@ class PayController extends Controller
                 //TODO 逻辑处理  订单状态更新
                 // $order_sn = $xml->out_trade_no;      //本地订单号
                 $pay_time = strtotime($xml->time_end);
-                OrderModel::update(['pay_amount'=>$xml->cash_fee,'pay_time'=>$pay_time])->where(['order_sn'=>$order_sn]);
+                OrderModel::where(['order_sn'=>$xml->out_trade_no])->update(['pay_amount'=>$xml->cash_fee,'pay_time'=>$pay_time]);
             }else{
                 //TODO 验签失败
                 echo '验签失败，IP: '.$_SERVER['REMOTE_ADDR'];
