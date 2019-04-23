@@ -8,7 +8,7 @@
     <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 </head>
 <body>
-    <button id="aa">选择照片</button>
+    <button id="btn1">选择照片</button>
     <script src="js/jquery/jquery-1.8.3.min.js"></script>
     <img src="" alt="" id="imgs0" width="260"><hr>
     <img src="" alt="" id="imgs1" width="260"><hr>
