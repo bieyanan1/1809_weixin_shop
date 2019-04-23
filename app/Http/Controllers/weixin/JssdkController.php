@@ -32,7 +32,7 @@ class JssdkController extends Controller
         ];
 
         $data = [
-            'jsconfig' => $js_config
+            'js_config' => $js_config
         ];
         return view('weixin.jssdk',$data);
     
