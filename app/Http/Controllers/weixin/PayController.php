@@ -180,6 +180,7 @@ class PayController extends Controller
                 echo '验签失败，IP: '.$_SERVER['REMOTE_ADDR'];
                 // TODO 记录日志
             }
+            
         }
         $response = '<xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>';
         echo $response;
@@ -189,7 +190,6 @@ class PayController extends Controller
     public function paySuccess()
     {
         $oid = $_GET['oid'];
-
         echo 'OID: '.$oid . "支付成功";
     }
 

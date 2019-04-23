@@ -19,8 +19,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//商品列表
+Route::get('goods/index', 'GoodsController@index');
+//商品浏览量
+Route::get('goods/list', 'GoodsController@list');
+//商品排行
+// Route::get('goods/sort', 'GoodsController@sort'); 
 //购物车
 Route::get('cart', 'CartController@index');
+//缓存商品信息
+// Route::get('goods/cache/{goods_id?}', 'GoodsController@cache');
 //添加购物车
 Route::get('cart/add/{goods_id?}', 'CartController@add');
 //订单处理
