@@ -39,4 +39,11 @@ class JssdkController extends Controller
 
         
     }
+
+
+    public function getImg()
+    {
+
+        
+    }
 }

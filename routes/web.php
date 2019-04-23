@@ -46,5 +46,8 @@ Route::get('pay/success', 'weixin\PayController@paySuccess');
 
 //jssdk测试
 Route::get('/js/test', 'weixin\JssdkController@test');
+//获取上传的照片
+Route::get('/js/getImg', 'weixin\JssdkController@getImg');
+
 
 
