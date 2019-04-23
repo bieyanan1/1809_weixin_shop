@@ -44,3 +44,7 @@ Route::get('order/paystatus', 'Order\IndexController@payStatus');
 Route::get('pay/success', 'weixin\PayController@paySuccess');
 
 
+//jssdk测试
+Route::get('/js/test', 'weixin\JssdkController@test');
+
+
