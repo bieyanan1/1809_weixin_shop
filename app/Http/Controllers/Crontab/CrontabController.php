@@ -7,5 +7,8 @@ use App\Http\Controllers\Controller;
 
 class CrontabController extends Controller
 {
-    //
+    public function del()
+    {
+        echo "1105";
+    }
 }

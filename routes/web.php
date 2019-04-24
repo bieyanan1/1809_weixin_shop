@@ -57,6 +57,9 @@ Route::get('exam/valid','examd\ExamController@valid');
 //接受推送事件
 Route::post('exam/valid','examd\ExamController@wxEvent');
 
+Route::get('crontab/del','Crontab\CrontabController@del');
+
+
 
 
 
