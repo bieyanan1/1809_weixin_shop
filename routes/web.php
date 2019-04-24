@@ -50,4 +50,7 @@ Route::get('/js/test', 'weixin\JssdkController@test');
 Route::get('/js/getImg', 'weixin\JssdkController@getImg');
 
 
+//日测
+Route::get('exam/test', 'examd\ExamController@test');
+
 
