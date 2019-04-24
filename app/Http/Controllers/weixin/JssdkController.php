@@ -15,11 +15,6 @@ class JssdkController extends Controller
         $ticket = getJsapiTicket();
         $timestamp = time();
         $current_url = $_SERVER['REQUEST_SCHEME']. '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-        // echo $nonceStr;echo '<br>';
-        // echo $timestamp;echo '<br>';
-        // echo $ticket;echo '<br>';
-        // echo $current_url;echo '<br>';
-
         $str = "jsapi_ticket=$ticket&nonceStr=$nonceStr&timestamp=$timestamp&url=$current_url";
         $sign = sha1($str);
         // echo $sign;die;
@@ -43,7 +38,6 @@ class JssdkController extends Controller
 
     public function getImg()
     {
-
         echo '<pre>';print_r($_GET);echo '</pre>';
     }
 }

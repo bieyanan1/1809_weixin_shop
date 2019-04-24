@@ -17,6 +17,15 @@
 
 
     <script>
+         wx.config({
+            appId: "{{$js_config['appId']}}",
+            timestamp: "{{$js_config['timestamp']}}", 
+            nonceStr: "{{$js_config['nonceStr']}}", 
+            signature: "{{$js_config['signature']}}",
+            jsApiList: ['chooseImage','uploadImage']
+        });
+
+
         wx.ready(function(){
             $("#btn1").click(function(){
 
