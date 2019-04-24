@@ -49,7 +49,7 @@ Route::get('/js/test', 'weixin\JssdkController@test');
 //获取上传的照片
 Route::get('/js/getImg', 'weixin\JssdkController@getImg');
 
-
+//测试
 Route::get('exam/test', 'examd\ExamController@test');
 Route::get('exam/token', 'examd\ExamController@getAccessToken');
 //首次接入
