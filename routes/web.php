@@ -50,7 +50,13 @@ Route::get('/js/test', 'weixin\JssdkController@test');
 Route::get('/js/getImg', 'weixin\JssdkController@getImg');
 
 
-//日测
 Route::get('exam/test', 'examd\ExamController@test');
+Route::get('exam/token', 'examd\ExamController@getAccessToken');
+//首次接入
+Route::get('exam/valid','examd\ExamController@valid');
+//接受推送事件
+Route::post('exam/valid','examd\ExamController@wxEvent');
+
+
 
 
