@@ -4,6 +4,7 @@ namespace App\Http\Controllers\weixin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
 use App\Model\OrderModel;
 use App\Model\WxUserModel;
 
@@ -12,6 +13,25 @@ class WxController extends Controller
     public function test(){
         echo 111;
     }
+    public function getAccessToken()
+    {
+        //先获取缓存,不存在的情况下在请求接口
+        $redis_key = 'wx_access_token';
+        $access_token = Redis::get($redis_key);
+        if($access_token){
+
+        }else{
+
+            $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.env('WX_APPID').'&secret='.env('WX_APPSECRET');
+            // echo $url;die;
+            $json_str = file_get_contents($url);
+            $arr = json_decode($json_str,true);
+            Redis::set($redis_key,$arr['access_token']);
+            Redis::expire($redis_key,3600);    //设置过期时间
+        }
+        return $access_token;
+    }
+
 
     public function getU()
     {
