@@ -13,6 +13,7 @@ class WxController extends Controller
     public function test(){
         echo 111;
     }
+
     public function getAccessToken()
     {
         //先获取缓存,不存在的情况下在请求接口
@@ -22,7 +23,7 @@ class WxController extends Controller
 
         }else{
 
-            $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.env('WX_APPID').'&secret='.env('WX_APPSECRET');
+            $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.env('WX_APP_ID').'&secret='.env('WX_APP_SEC');
             // echo $url;die;
             $json_str = file_get_contents($url);
             $arr = json_decode($json_str,true);
