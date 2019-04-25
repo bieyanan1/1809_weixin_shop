@@ -65,8 +65,3 @@ Route::get('crontab/del','Crontab\CrontabController@del');
 Route::get('wx/getu','weixin\WxController@getU');
 Route::get('wx/test','weixin\WxController@test');
 
-
-
-
-
-
