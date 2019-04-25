@@ -41,7 +41,7 @@ class WxController extends Controller
         print_r($response);die;
 
         $access_token = $response['access_token'];
-        print_r($access_token);die;
+//        print_r($access_token);die;
         $openid = $response['openid'];
 
         $url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
