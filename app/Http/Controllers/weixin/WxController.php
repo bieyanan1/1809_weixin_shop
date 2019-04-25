@@ -20,7 +20,7 @@ class WxController extends Controller
         $redis_key = 'wx_access_token';
         $access_token = Redis::get($redis_key);
         if($access_token){
-
+            return $access_token;
         }else{
 
             $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.env('WX_APP_ID').'&secret='.env('WX_APP_SEC');
@@ -36,10 +36,12 @@ class WxController extends Controller
 
     public function getU()
     {
-        $code = $_GET['code'];
+        $a = $_GET['code'];
+        $code = getAccessToken($a);
         $token = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.env('WX_APP_ID').'&secret='.env('WX_APP_SEC').'&code='.$code.'&grant_type=authorization_code';
         $response = json_decode(file_get_contents($token),true);
         $access_token = $response['access_token'];
+        print_r($access_token);die;
         $openid = $response['openid'];
         $url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
         $res = json_decode(file_get_contents($url),true);
