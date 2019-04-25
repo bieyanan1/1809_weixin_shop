@@ -5,7 +5,6 @@ namespace App\Http\Controllers\weixin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //use Illuminate\Support\Facades\Redis;
-use App\Model\OrderModel;
 use App\Model\WxUserModel;
 
 class WxController extends Controller
@@ -36,10 +35,10 @@ class WxController extends Controller
         }else {
             //用户信息入库
             $u_info = [
-                'openid' => $u['openid'],
-                'nickname' => $u['nickname'],
-                'sex' => $u['sex'],
-                'headimgurl' => $u['headimgurl'],
+                'openid' => $res['openid'],
+                'nickname' => $res['nickname'],
+                'sex' => $res['sex'],
+                'headimgurl' => $res['headimgurl'],
             ];
             $id = WxUserModel::insert($u_info);
             echo "热烈欢迎您关注此网站！";
