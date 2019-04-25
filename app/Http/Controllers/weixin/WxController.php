@@ -30,8 +30,8 @@ class WxController extends Controller
         $url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
         $res = json_decode(file_get_contents($url),true);
 
-        $wx_orders = OrderModel::where(['opneid'=>$openid])->first();
-        if($wx_orders){
+        $wxModel= WxUserModel::where(['opneid'=>$openid])->first();
+        if($wxModel){
             echo "又，来了老弟";
         }else {
             //用户信息入库
