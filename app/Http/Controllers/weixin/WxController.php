@@ -38,9 +38,10 @@ class WxController extends Controller
         $code = $_GET['code'];
         $token = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.env('WX_APP_ID').'&secret='.env('WX_APP_SEC').'&code='.$code.'&grant_type=authorization_code';
         $response = json_decode(file_get_contents($token),true);
+        print_r($response);die;
 
         $access_token = $response['access_token'];
-//        print_r($access_token);die;
+        print_r($access_token);die;
         $openid = $response['openid'];
 
         $url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
