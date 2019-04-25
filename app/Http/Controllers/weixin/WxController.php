@@ -14,23 +14,6 @@ class WxController extends Controller
         echo 111;
     }
 
-//    public function getAccessToken()
-//    {
-//        //先获取缓存,不存在的情况下在请求接口
-//        $redis_key = 'wx_access_token';
-//        $access_token = Redis::get($redis_key);
-//        if($access_token){
-//            echo "ok";
-//        }else{
-//            echo "no";
-//            $url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.env('WX_APP_ID').'&secret='.env('WX_APP_SEC');
-//            $json_str = file_get_contents($url);
-//            $arr = json_decode($json_str,true);
-//            Redis::set($redis_key,$arr['access_token']);
-//            Redis::expire($redis_key,3600);    //设置过期时间
-//        }
-//        return $access_token;
-//    }
 
 
     public function getU()
@@ -38,7 +21,7 @@ class WxController extends Controller
         $code = $_GET['code'];
         $token = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid='.env('WX_APP_ID').'&secret='.env('WX_APP_SEC').'&code='.$code.'&grant_type=authorization_code';
         $response = json_decode(file_get_contents($token),true);
-        print_r($response);die;
+//        print_r($response);die;
 
         $access_token = $response['access_token'];
 //        print_r($access_token);die;
