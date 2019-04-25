@@ -41,6 +41,5 @@ class WxController extends Controller
             $id = WxUserModel::insert($u_info);
             echo "热烈欢迎您关注此网站！";
         }
-
     }
 }
