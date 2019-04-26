@@ -86,7 +86,6 @@ class WxUserController extends Controller
         $grid->nickname('用户名称');
         $grid->sex('性别');
         $grid->headimgurl('用户头像');
-
         return $grid;
     }
 
@@ -105,7 +104,6 @@ class WxUserController extends Controller
         $show->nickname('Nickname');
         $show->sex('Sex');
         $show->headimgurl('Headimgurl');
-
         return $show;
     }
 
@@ -117,12 +115,10 @@ class WxUserController extends Controller
     protected function form()
     {
         $form = new Form(new WxUserModel);
-
         $form->text('openid', 'Openid');
         $form->text('nickname', 'Nickname');
         $form->number('sex', 'Sex');
         $form->text('headimgurl', 'Headimgurl');
-
         return $form;
     }
 }

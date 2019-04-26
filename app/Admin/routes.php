@@ -17,6 +17,7 @@ Route::group([
     $router->resource('order', OrderController::class);
     //微信用户管理
     $router->resource('userlist', WxUserController::class);
-
-
+    //素材管理
+    $router->resource('addsource', SourceController::class);
 });
+
